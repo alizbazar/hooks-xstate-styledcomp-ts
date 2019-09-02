@@ -1,10 +1,12 @@
 {
   "name": "hooks",
   "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
     "viz": "node scripts/export-statechart.js"
   },
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^12.7.3",

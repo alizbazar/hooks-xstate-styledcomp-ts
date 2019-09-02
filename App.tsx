@@ -80,13 +80,13 @@ const useTimer = (isOn: boolean, time: number, setTime: Function) => {
     return () => {
       isRunning = false
     }
-  }, [isOn])
+  }, [isOn, setTime, time])
 }
 
 const useStopWatch = () => {
   const [time, setTime] = useState(0)
-  const clearTimer = () => setTime(0)
   const machine = useMemo(() => {
+    const clearTimer = () => setTime(0)
     return createMachine({ actions: { clearTimer } })
   }, [setTime])
   const [state, send] = useMachine(machine)
